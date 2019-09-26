@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Review - Example 3</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <main class="container">
+    <h1>Examples</h1>
+
+    <h2>Example 5</h2>
+
+    <p>
+      This example is taken from the
+      <a href="//developer.mozilla.org/en-US/docs/Web/API/Document/write">
+        MDN docs for <code>Document.write()</code>
+      </a>. When you click on the button below, the entire HTML document will be
+      overwritten and replaced with an <code>h1</code> element with the text
+    </p>
+
+    <blockquote>Out with the old - in with the new</blockquote>
+
+    <p>To return the document to its previous state, simply reload the page.</p>
+
+    <button onclick="newContent();">Click here!</button>
+  </main>
+
+  <script>
+    function newContent() {
+      document.open();
+      document.write("<h1>Out with the old - in with the new</h1>");
+      document.close();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Review - JavaScript HTML DOM Document Object</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <main class="container">
+    <article>
+      <section>
+        <h1>JavaScript HTML DOM Document Object</h1>
+
+        <h2>Finding HTML Elements</h2>
+        <p>How to find and access HTML elements.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td><code>document.getElementById(id)</code></td>
+              <td>Find an element by its ID</td>
+            </tr>
+
+            <tr>
+              <td><code>document.getElementsByTagName(name)</code></td>
+              <td>Find elements by a tag name</td>
+            </tr>
+
+            <tr>
+              <td><code>document.getElementsByClassName</code></td>
+              <td>Find elements by a class name</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          See an <a href="example1.html">example of these methods</a>
+        </p>
+      </section>
+
+      <section>
+        <h2>Changing HTML Elements</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td><code>element.innerHTML = new HTML content</code></td>
+              <td>Change the inner HTML of the element</td>
+            </tr>
+
+            <tr>
+              <td><code>element.attribute = new value</code></td>
+              <td>Change the attribute of the element</td>
+            </tr>
+
+            <tr>
+              <td><code>element.style.property = new style</code></td>
+              <td>Change the style of the element</td>
+            </tr>
+
+            <tr>
+              <th>Method</th>
+              <th>Description</th>
+            </tr>
+
+            <tr>
+              <td><code>element.setAttribute(attribute, value)</code></td>
+              <td>Change the attribute of the element</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Adding and Deleting Elements</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td><code>document.createElement(element)</code></td>
+              <td>Creates an HTML element</td>
+            </tr>
+            <tr>
+              <td><code>document.removeChild(element)</code></td>
+              <td>Removes an HTML element</td>
+            </tr>
+            <tr>
+              <td><code>document.appendChile(element)</code></td>
+              <td>Adds an HTML element</td>
+            </tr>
+            <tr>
+              <td><code>document.replaceChild(element)</code></td>
+              <td>Replaces an HTML element</td>
+            </tr>
+            <tr>
+              <td><code>document.write(text)</code></td>
+              <td>Writes into the HTML output stream</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          See an <a href="example3.html" target="_blank">example of these methods</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2>Adding Event Handlers</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>
+                <code>document.getElementById(id).onclick = function() {code}</code>
+              </td>
+              <td>Adds an event handler to an <code>onclick</code> event</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Finding HTML Objects</h2>
+
+        <p>
+          To see how to find HTML objects,
+          <a href="//www.w3schools.com/js/js_htmldom_document.asp">see the W3Schools</a>.
+        </p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

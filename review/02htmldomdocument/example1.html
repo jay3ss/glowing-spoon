@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <h1>Examples</h1>
+
+    <p>
+      At the end of each example, you'll find the JavaScript in
+      <code>script</code> tags. To view the code, right click on the page and
+      then click on "View Selection Source" (or whatever the equivalent is for
+      your browser).
+    </p>
+
+    <h2>Example 1</h2>
+
+    <p>
+      Below is an example of <code>document.getElementById(id)</code> in
+      action. The <code>p</code> tag with the id of "hello" will have its text
+      (<code>innerHTML</code>) modified to say "Hello!". If you look at the
+      source of the page, you'll see that the element does not have that text.
+    </p>
+
+    <p id="hello"></p>
+
+    <script>
+      document.getElementById('hello').innerHTML = "Hello!";
+    </script>
+
+    <!-- <h2>Example 2</h2>
+
+      <p>
+        Below is an example of <code>document.getElementsByTagName(name)</code> in
+        action. The <code>div</code> tags will have <code>innerHTML</code> modified
+        to have a <code>p</code> that has the text "Hello!". If you look at the
+        source of the page, you'll see that the elements do not have any inner
+        HTML.
+      </p>
+
+      <p id="numDivs"></p>
+
+      <div></div>
+      <div></div>
+      <div></div> -->
+    </main>
+
+  <!-- <script>
+    document.getElementById('numDivs').innerHTML = "There are " + document.getElementsByTagName('div').length + " divs.";
+  </script> -->
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Review - Changing CSS</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <main class="container">
+    <article>
+      <section>
+        <h1>Changing CSS</h1>
+
+
+        <p>
+          The DOM API allows JavaScript to change the CSS styling of HTML
+          elements.
+        </p>
+      </section>
+
+      <section>
+        <h2>Changing HTML Style</h2>
+
+        <p>
+          The syntax to change the styling of HTML elements is as follows
+        </p>
+
+<pre class="code-example prettyprint">document.getElementById(id).style.color = new style;</pre>
+
+        <p>
+          where the <code>id</code> is the id of the element and <code>new style</code>
+          is the new value of the style property.
+        </p>
+
+        <h3>Example</h3>
+
+        <p>
+          The following example will change the font color of the element with the id
+          of <code>p2</code> to blue.
+        </p>
+
+<pre class="code-example prettyprint">&lt;html&gt;
+&lt;body&gt;
+
+&lt;p id=&quot;p2&quot;&gt;Hello, World!&lt;p/&gt;
+
+&lt;script&gt;
+document.getElementById(&quot;p2&quot;).style.color = &quot;blue&quot;;
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+          <p>See this <a href="example1.html">example in action</a>.</p>
+      </section>
+
+      <section>
+        <h2>Using Events</h2>
+
+        <p>
+          The DOM allows code to be executed when certain events occur. Examples
+          of these are (but no limited to)
+        </p>
+
+        <ul>
+          <li>an element is clicked on</li>
+          <li>the page has loaded</li>
+          <li>input fields have changed</li>
+        </ul>
+
+        <h3>Example</h3>
+
+        <p>
+          The following example changes the font color of the element with the
+          <code>id</code> of "id1" from black to red when the button is clicked.
+        </p>
+
+<pre class="code-example prettyprint">&lt;html&gt;
+&lt;body&gt;
+
+&lt;p id=&quot;id1&quot;&gt;My Heading 1&lt;p/&gt;
+
+&lt;button type=&quot;button&quot;
+        onclick=&quot;document.getElementById('id1').style.color = 'red'&quot;&gt;
+  Click Me!
+&lt;/button&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+        <p>See this <a href="example2.html">example in action</a>.</p>
+
+      </section>
+    </article>
+  </main>
+  <script src="/static/js/run_prettify.js"></script>
+</body>
+</html>

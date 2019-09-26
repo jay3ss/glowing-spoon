@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <title>Review - HTML DOM Animation</title>
+</head>
+<body>
+
+  <main class="container">
+    <article>
+      <section>
+        <h1>HTML DOM Animation</h1>
+
+        <p>
+          Now, we're going to learn how to create HTML animations using
+          JavaScript.
+        </p>
+      </section>
+
+      <section>
+        <h2>A Basic Web Page</h2>
+
+        <p>
+          Before we learn to create HTML animations, we'll need a basic web
+          page to animate. This page is shown below.
+        </p>
+
+        <pre class="code-example prettyprint">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;body&gt;
+
+&lt;h1&gt;My First JavaScript Animation&lt;/h1&gt;
+
+&lt;div id&quot;animation&quot;&gt;My First JavaScript Animation&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </section>
+
+      <section>
+        <h2>Create the Animation Container</h2>
+
+        <p>
+          We're going to create a container that all animations will be relative to.
+        </p>
+
+        <pre class="code-example prettyprint">&lt;div id=&quot;container&quot;&gt;
+  &lt;div id=&quot;animate&quot;&gt;My animation will go here&lt;/div&gt;
+&lt;/div&gt;</pre>
+
+      </section>
+
+      <section>
+        <h2>Styling the Elements</h2>
+
+        <p>
+          We're going to style the "container" element with
+          <code>position: relative</code> and the "animation" element with
+          <code>position: absolute</code>. We'll also size and style them, as
+          shown below
+        </p>
+
+        <pre class="code-example prettyprint">#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background: red;
+}</pre>
+      </section>
+
+      <section>
+        <h2>Animation Code</h2>
+        <p>
+          The animations are achieved by programming gradual changes in an
+          element's style. A timer with a small enough interval calls these
+          changes to make them appear to be continuous. The basic code is given
+          below
+        </p>
+
+        <pre class="code-example prettyprint">var id = setInterval(frame, 5);
+
+function frame() {
+  if (/* test for finished */) {
+    clearInterval(id);
+  }
+  else {
+    /* code to change the element's style */
+  }
+}</pre>
+      </section>
+
+      <section>
+        <h2></h2>
+
+        <p></p>
+
+        <h3>Creating the Animation with JavaScript</h3>
+
+        <p>
+          The code below will move the element with the id of "animate" down
+          and to the right until the <code>pos</code> variable has a value of
+          350.
+        </p>
+
+        <pre class="code-example prettyprint">function myMove() {
+  var elem = document.getElementById("animate");
+  var pos = 0;
+  var id = setInterval(frame, 5);
+
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elem.style.top = pos + 'px';
+      elem.style.left = pos + 'px';
+    }
+  }
+}</pre>
+      </section>
+
+      <section>
+        <h2>Creating an Event</h2>
+
+        <p>
+          Now that we have the code to animate an element, we need a way to
+          start it. To do that, we'll use a button as shown below.
+        </p>
+
+        <h3>Example</h3>
+
+        <p>
+          The code below shows a button that, when clicked, class the
+          <code>myMove</code> function which will begin the animation.
+        </p>
+
+        <pre class="code-example prettyprint">&lt;button type=&quot;button&quot;
+        onclick=&quot;myMove();&quot;&gt;
+  Click here
+&lt;/button&gt;</pre>
+      </section>
+
+      <section>
+        <h2>Putting it All Together</h2>
+
+        <p>
+          Now, that we've gotten every part down, let's combine them to the
+          final product as shown below.
+        </p>
+
+        <pre class="code-example prettyprint">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    #container {
+      width: 400px;
+      height: 400px;
+      position: relative;
+      background: yellow;
+    }
+
+    #animate {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      background: red;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;div id=&quot;container&quot;&gt;
+    &lt;div id=&quot;animate&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;button type=&quot;button&quot; onclick=&quot;myMove();&quot;&gt;
+    Click here
+  &lt;/button&gt;
+
+  &lt;script&gt;
+    function myMove() {
+      var elem = document.getElementById(&quot;animate&quot;);
+      var pos = 0;
+      var id = setInterval(frame, 5);
+
+      function frame() {
+        if (pos == 350) {
+          clearInterval(id);
+        } else {
+          pos++;
+          elem.style.top = pos + 'px';
+          elem.style.left = pos + 'px';
+        }
+      }
+    }
+  &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+      <p>See this <a href="example1.html">example in action</a>.</p>
+
+      </section>
+    </article>
+  </main>
+
+  <script src="/static/js/run_prettify.js"></script>
+</body>
+</html>

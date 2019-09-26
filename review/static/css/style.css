@@ -1,0 +1,165 @@
+@import url('https://yarnpkg.com/en/package/normalize.css');
+
+:root {
+    /* Colors */
+    --red: #e51c23;
+    --orange: #fd7e14;
+    --yellow: #ff9800;
+
+    --success: #4CAF50;
+    --info: #9C27B0;
+    --warning: #ff9800;
+    --danger: #e51c23;
+
+    --code-background: rgb(239, 240, 241);
+    --background-color: white;
+
+    --theme-hue: 0;
+    --border-color-softer: hsl(var(--theme-hue), 0%, 82%);
+
+    /* Sizes */
+    --grid-max-width: 960px;
+}
+
+html {
+    font-size: 1.1em;
+    margin: 0.7em;
+}
+
+body {
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: Helvetica, Arial, sans-serif;
+  color: var(--text-color-normal);
+  background-color: var(--background-color);
+}
+
+a {
+    text-decoration-style: dotted;
+}
+
+blockquote {
+    background: lightgrey;
+    display: block;
+    margin-bottom: 1.5rem;
+    width: 80%;
+}
+
+table {
+    display: block;
+}
+
+td, th {
+    padding: 0.5em;
+    margin: 0.5em;
+    border: 1px solid black;
+}
+
+table, td, th, tbody, thead {
+    border-collapse: collapse;
+    overflow: scroll;
+}
+code {
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+h1, .h1 {
+    font-size: 2.03125rem;
+}
+
+h2, .h2 {
+    font-size: 1.625rem;
+}
+
+h3, .h3 {
+    font-size: 1.421875rem;
+}
+
+h4, .h4 {
+    font-size: 1.21875rem;
+}
+
+h5, .h5 {
+    font-size: 1.015625rem;
+}
+
+h6, .h6 {
+    font-size: 0.8125rem;
+}
+
+ul {
+    list-style: circle inside;
+}
+
+ol {
+    list-style: decimal inside;
+}
+
+ol, ul {
+    padding-left: 0;
+      margin-top: 0;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+	font-size: 100%;
+	margin: 1rem 0 1rem 3rem;
+	color: var(--text-color-softer);
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Alert classes */
+.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    padding-right: 2.5rem;
+    border: none;
+    color: white;
+}
+
+.danger {
+    background-color: var(--danger);
+}
+
+.info {
+    background-color: var(--info);
+}
+
+.success {
+    background-color: var(--success);
+}
+
+.warning {
+    background-color: var(--warning);
+}
+
+.code-example {
+    background-color: var(--code-background);
+    border: none !important;
+    border-radius: 0.25rem;
+    font-size: 1.1em;
+    overflow: auto;
+    vertical-align: middle;
+    padding: 0.5em;
+}
+
+.container {
+    position: relative;
+    max-width: var(--grid-max-width);
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+}
+

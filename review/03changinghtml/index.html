@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Review - Changing HTML</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <main class="container">
+      <article>
+        <section>
+          <h1>Changing HTML</h1>
+
+          <p>
+            JavaScript allows us to create HTML dynamically. This means that we can
+            change (create, read, update, and destroy) the HTML elements and their
+            contents.
+          </p>
+        </section>
+
+        <section>
+          <h2>Changing the HTML Output Stream</h2>
+
+          <p>
+            By using the <code>document.write()</code> method, we can directly write to
+            the HTML output stream.
+          </p>
+
+          <div class="alert warning">
+            <p><strong>Warning!</strong> Never use <code>document.write()</code>
+              <em>after</em> the document is loaded. This will overwrite the
+              <strong>entire</strong> document.
+            </p>
+          </div>
+
+          <h3>Example</h3>
+
+          <p>
+            The following example will overwrite the entire document with the
+            current datetime.
+          </p>
+
+          <pre class="code-example">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;script&gt;
+document.write(Date());
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+          <p>See the <a href="example1.html">example in action</a>.</p>
+        </section>
+
+        <section>
+          <h2>Changing HTML Content</h2>
+
+          <p>
+            Using <code>innerHTML</code> is the easiest way to change the
+            content of an HTML element.
+          </p>
+
+          <div class="alert info">
+            <p><strong>Heads up!</strong> Unlike <code>document.write()</code>,
+              this <em>will not</em> change any of the contents of the other
+              HTML elements in the document. It will only change the contents
+              of the element that you specify.
+            </p>
+          </div>
+
+          <h3>Example</h3>
+
+          <p>
+            The following example will change the content of the <code>p</code>
+            tag that has the id of "p1" from "Hello, World!" to "New text!"
+          </p>
+
+          <pre class="code-example">
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p id=&quot;p1&quot;&gt;Hello, World!&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById('p1').innerHTML = &quot;New text!&quot;;
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+          <p>See the <a href="example2.html">example in action</a>.</p>
+        </section>
+
+        <section>
+          <h2>Changing the Value of an Attribute</h2>
+
+          <p>
+            The attributes (such as <code>src</code> and <code>href</code>) can
+            be changed dynamically by using the following syntax
+          </p>
+
+          <pre class="code-example">
+document.getElementById(id).attribute = new value;</pre>
+
+          <p>where <code>attribute</code> is the attribute you wish to change.</p>
+
+          <h3>Example</h3>
+
+          <p>
+            Here, we're going to change the <code>src</code> attribute of an
+            <code>img</code> element from one image to another.
+          </p>
+
+          <pre class="code-example">
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;img id=&quot;myImage&quot; src=&quot;smiley.gif&quot;/&gt;
+
+&lt;script&gt;
+document.getElementById(&quot;myImage&quot;).src = &quot;landscape.jpg&quot;;
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+            <p>See the <a href="example3.html">example in action</a>.</p>
+        </section>
+      </article>
+  </main>
+</body>
+</html>
