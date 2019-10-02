@@ -401,3 +401,16 @@ main article h2 {
 }
 
 }
+
+/* Style for making notes making the font smaller and italicized */
+.note {
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+/* Style specifies a display, float, and padding for the image of a class */
+.class-img {
+    display: inline;
+    float: left;
+    margin-right: 1.5em;
+}
