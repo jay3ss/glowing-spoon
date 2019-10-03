@@ -402,6 +402,7 @@ main article h2 {
 
 }
 
+/* CUSTOM STYLES */
 /* Style for making notes making the font smaller and italicized */
 .note {
     font-size: 0.8em;
@@ -413,4 +414,43 @@ main article h2 {
     display: inline;
     float: left;
     margin-right: 1.5em;
+}
+
+/* Style specifies font size and weight */
+.class-length {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+/* Style specifies the color of the table cell */
+.yoga-availability {
+    background-color: red;
+    width: 15px;
+}
+
+/* Styles for coloring the background of the schedule table */
+.pilates-availability {
+    background-color: lime;
+}
+
+.zumba-availability {
+    background-color: blue;
+}
+
+/* Styles for setting the display type, overflow, white space */
+table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* Styles for setting the padding and margins */
+#schedule td, #schedule th {
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+/* Style for setting the display type */
+#schedule table {
+    display: block;
 }
