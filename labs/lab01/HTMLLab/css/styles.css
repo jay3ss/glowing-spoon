@@ -424,17 +424,17 @@ main article h2 {
 
 /* Style specifies the color of the table cell */
 .yoga-availability {
-    background-color: red;
+    background-color: lightcoral;
     width: 15px;
 }
 
 /* Styles for coloring the background of the schedule table */
 .pilates-availability {
-    background-color: lime;
+    background-color: lightgreen;
 }
 
 .zumba-availability {
-    background-color: blue;
+    background-color: lightskyblue;
 }
 
 /* Styles for setting the display type, overflow, white space
@@ -447,7 +447,10 @@ table {
 }
 
 /* Styles for setting the padding and margins */
-#schedule td, #schedule th {
+#schedule td,
+#schedule th,
+#key td,
+#key th {
     padding: 0.5em;
     margin: 0.5em;
 }
