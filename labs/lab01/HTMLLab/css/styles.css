@@ -437,7 +437,9 @@ main article h2 {
     background-color: blue;
 }
 
-/* Styles for setting the display type, overflow, white space */
+/* Styles for setting the display type, overflow, white space
+Retrieved from https://stackoverflow.com/a/30423904/3562890
+on 10/2/2019 */
 table {
     display: block;
     overflow-x: auto;
@@ -450,7 +452,3 @@ table {
     margin: 0.5em;
 }
 
-/* Style for setting the display type */
-#schedule table {
-    display: block;
-}
