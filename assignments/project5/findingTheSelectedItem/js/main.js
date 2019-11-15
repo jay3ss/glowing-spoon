@@ -6,7 +6,6 @@ function showStuff(el) {
     for (i = 0; i < elementID.length; i++) {
         if (elementID[i].selected === true) {
             var x = elementID[i].text;
-            // document.getElementById('output').innerHTML = x;
         }
     } // end loop
     return x;
