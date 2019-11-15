@@ -12,21 +12,22 @@ function showStuff(el) {
 } // end function
 
 
-function showMore() {
-    var elementID = document.getElementsByName('bulb');
-    console.log(elementID.length);
+function showMore(el) {
+    var elementID = document.getElementsByName(el);
+    // console.log(elementID.length);
+    var mycheck = "";
     for (i = 0; i < elementID.length; i++) {
-        console.log(elementID[i].checked);
-        console.log(elementID[i].value);
         if (elementID[i].checked === true) {
-
+            mycheck = mycheck + elementID[i].value + '<br>';
         } // end if
     } // end loop
+    return mycheck;
 } // end function
 
 function evaluatePage() {
     var feedbackState = showStuff('state');
     var feedbackHome = showStuff('home');
+    var feedbackLight = showMore('bulb');
     showMore();
-    document.getElementById('output').innerHTML = feedbackState + '<br>' + feedbackHome;
+    document.getElementById('output').innerHTML = feedbackState + '<br>' + feedbackHome + '<br>' + feedbackLight;
 } // end function
