@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Finding the Selected Item</title>
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+  <h1>Practice</h1>
+
+  <h2>What is your home state?</h2>
+
+  <select id="state">
+    <option value="WY">Wyoming</option>
+    <option value="UT">Utah</option>
+    <option value="ID">Idaho</option>
+    <option value="MT">Montana</option>
+    <option value="CO">Colorado</option>
+  </select>
+
+  <h2>Your HomeStyle</h2>
+
+  <select id="home">
+    <option value="single">Single</option>
+    <option value="apartment">Apartment</option>
+    <option value="multi">Multi-Family</option>
+    <option value="mobile">Mobile Home</option>
+  </select>
+
+  <h2>Lighting</h2>
+  <label><input value="" style="checkbox" name="bulb" value="Incandescent">Incandescent</label>
+  <label><input value="" style="checkbox" name="bulb" value="LED ">Light Emitting Diode</label>
+  <label><input value="" style="checkbox" name="bulb" value="CFL">Compact Fluorescent Light</label>
+
+  <br>
+
+  <button onclick="evaluatePage()">Run script</button>
+
+  <div id="output"></div>
+
+
+</body>
+<script type="text/javascript" src="js/main.js"></script>
+
+</html>
