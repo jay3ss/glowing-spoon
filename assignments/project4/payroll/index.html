@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CS 962 - Payroll Calculator</title>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h1>Payroll Calculator</h1>
+
+  <p>Enter the employee's information below</p>
+
+  <table>
+    <tr>
+      <th><label for="name">Name</label></th>
+      <td><input type="text" name="name" id="name"></td>
+    </tr>
+
+    <tr>
+      <th><label for="hours">Hours worked</label></th>
+      <td><input type="number" min="0" step=".25" name="hours" id="hours"></td>
+    </tr>
+
+    <tr>
+      <th><label for="payperhour">Pay per hour</label></th>
+      <td><input type="number" min="0" step=".01" name="payperhour" id="payperhour"></td>
+    </tr>
+
+    <tr>
+      <th><label for="emptax">Tax rate</label></th>
+      <td><input type="radio" name="emptax" id="emptax" value="0.22">Single (22%)
+      <input type="radio" name="emptax" id="emptax" value="0.18">Family (18%)</td>
+    </tr>
+  </table>
+
+  <button onclick="calculate()">Calculate</button>
+
+  <h2 id="titleResults"></h2>
+
+  <p id="textResults"></p>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CS 962 - ATM</title>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>ATM</h1>
+
+  <table>
+    <tr>
+      <th>Balance ($)</th>
+      <td id="balance">1000</td>
+    </tr>
+    <tr>
+      <th><label for="amount">Amount</label></th>
+      <td><input type="number" name="amount" id="amount" min="0" step=".01"></td>
+    </tr>
+
+    <tr>
+      <th><label for="operation">Operation</label></th>
+      <td>
+        <input type="radio" name="operation" id="operation" value="withdraw">Withdraw
+        <input type="radio" name="operation" id="operation" value="deposit">Deposit
+      </td>
+    </tr>
+  </table>
+
+  <button onclick="submit()">Submit</button>
+
+</body>
+</html>
