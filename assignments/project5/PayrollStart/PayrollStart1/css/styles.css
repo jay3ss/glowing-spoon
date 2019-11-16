@@ -10,8 +10,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -22,7 +22,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -56,7 +56,7 @@ header {
 header h1 {
 	color: #e05b13;
 	font-size: 3rem;
-	
+
 	padding: .5rem 0 .5rem 60px;
 }
 header, nav, main, footer {max-width: 960px; margin: 0 auto;}
@@ -102,7 +102,7 @@ main form label {
 	display: block;
 	padding: .4rem 0;
 	font-size: .75rem;
-   
+
 }
 main form span {
 	display: block;
@@ -142,19 +142,20 @@ footer {
 main figure img {width: 100%;}
 
 @media only screen and (min-width: 30em) {
-   main figure {width:70%;float: right;} 
+   main figure {width:70%;float: right;}
 }
 
+/* Custom CSS */
+#feedback strong {
+	font-weight: bold;
+}
 
+#empName input {
+	width: 16rem;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+#feedbackTable th {
+	font-weight: bold;
+	text-align: left;
+	width: 8rem;
+}
