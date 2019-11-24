@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Fundamentals - Selectors by Tag Name</title>
+  <style type="text/css">
+    .BlueDiv {background-color: navy; color: white; width: 200px;}
+    .RedDiv {background-color: red; color: white; width: 200px;}
+    .style1 { width: 100%; }
+  </style>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript">
+    window.jQuery||document.write('<script src="../js/jquery.js"><\/script>');
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // alert($('div:contains("my div")').html());
+      // $('tr').css('background-color', 'green');
+      // $('tr:odd').css('background-color', 'green');
+      // $('tr:even').css('background-color', 'yellow');
+      // $('tr:first-child').css('background-color', 'yellow');
+      // $('#DataTable tr:odd').css('background-color', 'green');
+      // alert($('div[title$="Title"]').html());
+      // alert($('div[title^="Title"]').html());
+      // alert($('div[title*="Title"]').html());
+      $('div[title*="Title"]').html('Updated Div Value due to Title');
+    })
+  </script>
+</head>
+<body>
+  <div id="TestDiv" title="Div Title asdf asdfasfd asdf">This is my div text</div>
+  <div>
+    <table id="DataTable">
+      <tr>
+        <td>Cell 1 Row 1</td>
+      </tr>
+      <tr>
+        <td>Cell 1 Row 2</td>
+      </tr>
+      <tr>
+        <td>Cell 1 Row 3</td>
+      </tr>
+      <tr>
+        <td>
+          <table style="width:100%;">
+            <tr>
+              <td>Nested Table Cell and Row</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br>
+  </div>
+
+  <div class="BlueDiv">
+    <span>Blue div</span>
+  </div>
+
+  <br>
+  <span class="BlueDiv">This is my blue span</span>
+  <br>
+
+  <div class="RedDiv">
+    <span>Red div</span>
+  </div>
+  <p><img style="width:200px;" src="../img/pluralsight-logo.jpg"></p>
+
+  <form action="" id="form1" runat="server">
+    <table style="width:300px;">
+      <tr>
+        <td style="width:30%;">First Name</td>
+        <td style="width:70%;"><input type="text" id="FirstNameTextBox"></td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td><input type="text" id="LastNameTextBox"></td>
+      </tr>
+      <tr>
+        <td>Comments</td>
+        <td><textarea id="CommentsTextArea" cols="60" rows="5">TextArea</textarea></td>
+      </tr>
+    <tr>
+      <td>
+        <select id="sel">
+          <option value="AZ">AZ</option>
+          <option value="CA" selected="true">CA</option>
+        </select>
+      </td>
+      <td>&nbsp;</td>
+    </tr>
+      <tr>
+        <td><input type="button" id="SubmitButton" value="Submit"></td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>
