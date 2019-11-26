@@ -1,11 +1,18 @@
 /*jslint browser:true */
 "use strict";
 
+// main function
+$(document).ready(function () {
+    $('#calculatePaycheck').on('click', function () {
+        calculatePaycheck();
+    });
+});
+
 function calculatePaycheck() {
     // Get the data entered into the Weekly Time Sheet
-    var empName = addName('empName');
-    var hoursWorked = addHours('wts');
-    var empPayRate = payRate('payRate');
+    var empName = name();
+    var hoursWorked = hours();
+    var empPayRate = payRate();
     var empTaxRate = taxRate();
 
     // Calculate payroll information
@@ -22,34 +29,29 @@ function calculatePaycheck() {
 }
 
 // Returns the name of the employee entered into the Weekly Time Sheet
-function addName(name) {
-    var empName = document.getElementsByName(name)[0].value;
-    return empName;
+function name() {
+    return $('#empName input').val();
 }
 
 // Returns the number of hours worked entered into the Weekly Time Sheet
-function addHours(elemId) {
-    var days = document.getElementById(elemId).getElementsByTagName('input');
+function hours() {
+    var days = $('#wts input')
     var hours = 0;
-    for (var i = 0; i < days.length; i++) {
-        hours += Number(days[i].value);
-    }
+    days.each(function () {
+        hours += Number($(this).val());
+    });
 
     return hours;
 }
 
 // Returns the employee's pay rate entered into the Weekly Time Sheet
-function payRate(elemName) {
-    var pr = Number(document.getElementsByName(elemName)[0].value);
-    return pr;
+function payRate() {
+    return Number($('#payRate input').val());
 }
 
 // Returns the tax rate (as a percentage) selected in the Weekly Time Sheet
 function taxRate() {
-    var taxRateChoice = document.forms.payrollForm.panel.selectedIndex;
-    var taxRateOptions = document.forms.payrollForm.panel.options;
-    var tr = taxRateOptions[taxRateChoice].value / 100; // Convert to percentage
-    return tr;
+    return Number($('option:selected').val()) / 100; // convert to a decimal
 }
 
 // Calculates and returns the employee's gross pay
