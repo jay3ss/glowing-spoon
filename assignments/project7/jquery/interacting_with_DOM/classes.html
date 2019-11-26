@@ -60,30 +60,32 @@
             title: 'Some title 3',
           }
         )
-        .css({ 'background-color': 'purple',
-               'color': 'white',
-               'font-size': '20pt'})
+        .css({
+          'background-color': 'purple',
+          'color': 'white',
+          'font-size': '20pt'
+        })
         .text('Changed color');
 
-        // Modifying the DOM
-        var tcd = $('#TableContainerDiv');
-        tcd.append('<span style="background-color:green;">Appended Child 1</span>');
-        tcd.prepend('<br><span style="background-color:green;">Prepended Child 1</span>');
-        $('<br><span style="background-color:green;">Appended Child 2</span>').appendTo(tcd);
-        $('<span style="background-color:green;">Prepended Child 2</span>').prependTo(tcd);
+      // Modifying the DOM
+      var tcd = $('#TableContainerDiv');
+      tcd.append('<span style="background-color:green;">Appended Child 1</span>');
+      tcd.prepend('<br><span style="background-color:green;">Prepended Child 1</span>');
+      $('<br><span style="background-color:green;">Appended Child 2</span>').appendTo(tcd);
+      $('<span style="background-color:green;">Prepended Child 2</span>').prependTo(tcd);
 
-        // Wrap
-        $('span.Foo').wrap('<div class="RedDiv ParentWrapper" />');
-        // $('div.ParentWrapper').each(function () {
-        //   alert($(this).html());
-        // });
+      // Wrap
+      $('span.Foo').wrap('<div class="RedDiv ParentWrapper" />');
+      // $('div.ParentWrapper').each(function () {
+      //   alert($(this).html());
+      // });
 
-        // Remove
-        $('div.ParentWrapper').remove();
+      // Remove
+      $('div.ParentWrapper').remove();
 
-        // Class functions
-        // $('input[type="text"]').addClass('Highlight');
-        // $('#LastNameTextBox').removeClass('Highlight');
+      // Class functions
+      // $('input[type="text"]').addClass('Highlight');
+      // $('#LastNameTextBox').removeClass('Highlight');
 
 
     });
@@ -150,7 +152,8 @@
     <table style="width:300px;">
       <tr>
         <td style="width:30%;">First Name</td>
-        <td style="width:70%;"><input type="text" id="FirstNameTextBox" value="John" onfocus="FocusBlur(this)" onblur="FocusBlur(this)"></td>
+        <td style="width:70%;"><input type="text" id="FirstNameTextBox" value="John" onfocus="FocusBlur(this)"
+            onblur="FocusBlur(this)"></td>
       </tr>
       <tr>
         <td>Last Name</td>
@@ -176,4 +179,5 @@
     </table>
   </form>
 </body>
+
 </html>

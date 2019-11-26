@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Fundamentals - Selectors by Tag Name</title>
+  <style type="text/css">
+    table {
+      width: 300px;
+    }
+  </style>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript">
+    window.jQuery || document.write('<script src="../js/jquery.js"><\/script>');
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // var table = $('#customers');
+      var tbody = $('#customers tbody');
+      $('#addRow').on('click', function() {
+        // table.find('tbody')
+        tbody.append('<tr><td>Jane</td><td>Doe</td></tr>');
+      });
+
+      // $('tr').on('click mouseenter mouseleave', function () {
+      // table.find('tbody').on('click', 'td', function() {
+      tbody.on('click', function () {
+        alert($(this).text());
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div id="selectedPerson"></div>
+  <button id="addRow">Add Row</button>
+  <table id="customers">
+    <tr>
+      <td>John</td>
+      <td>Doe</td>
+    </tr>
+    <tr>
+      <td>Jim</td>
+      <td>Leaner</td>
+    </tr>
+    <tr>
+      <td>Michelle</td>
+      <td>James</td>
+    </tr>
+    <tr>
+      <td>Heedy</td>
+      <td>Faust</td>
+    </tr>
+    <tr>
+      <td>Tina</td>
+      <td>Smith</td>
+    </tr>
+    <tr>
+      <td>Supna</td>
+      <td>Patoria</td>
+    </tr>
+    <tr>
+      <td>Spike</td>
+      <td>Francis</td>
+    </tr>
+    <tr>
+      <td>Dan</td>
+      <td>Wahlin</td>
+    </tr>
+  </table>
+
+</body>
+
+</html>

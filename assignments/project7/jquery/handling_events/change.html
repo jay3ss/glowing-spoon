@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Fundamentals - Selectors by Tag Name</title>
+  <style type="text/css">
+    .BlueDiv {
+      background-color: navy;
+      color: white;
+      width: 200px;
+    }
+
+    .RedDiv {
+      background-color: red;
+      color: white;
+      width: 200px;
+    }
+
+    .style1 {
+      width: 100%;
+    }
+
+    .Highlight {
+      background-color: yellow;
+    }
+  </style>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript">
+    window.jQuery || document.write('<script src="../js/jquery.js"><\/script>');
+  </script>
+  <script type="text/javascript">
+    // function SubmitButton_Click() {
+    //   alert('Clicked Button');
+    // }
+    $(document).ready(function () {
+      WireEvents();
+    });
+
+    function WireEvents () {
+      $('#SubmitButton').click(function () {
+        // alert('Clicked Button');
+        var firstNameVal = $('#FirstNameTextBox').val();
+        var lastNameVal = $('#LastNameTextBox').val();
+        $('#DivOutput').text(firstNameVal + ' ' + lastNameVal);
+      });
+
+      // Handle select
+      $('.MyInput').change(function () {
+        $(this).addClass('Highlight')
+      });
+    }
+  </script>
+</head>
+
+<body>
+
+  <form action="" id="form1" runat="server">
+    <table style="width:300px;">
+      <tr>
+        <td style="width:30%;">First Name</td>
+        <td style="width:70%;"><input type="text" id="FirstNameTextBox" value="John"></td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td><input class="MyInput" type="text" id="LastNameTextBox"></td>
+      </tr>
+      <tr>
+        <td>Comments</td>
+        <td><textarea class="MyInput" id="CommentsTextArea" cols="60" rows="5">TextArea</textarea></td>
+      </tr>
+      <tr>
+        <td>
+          <select class="MyInput" id="StateSelect">
+            <option value="AZ">AZ</option>
+            <option value="CA" selected="true">CA</option>
+          </select>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><input type="button" id="SubmitButton" value="Submit"></td>
+        <!-- <td><input type="button" id="SubmitButton" onclick="SubmitButton_Click()" value="Submit"></td> -->
+        <td>
+          <div id="DivOutput"></div>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <script type="text/javascript">
+    // Handle events the old-fashioned way
+    // var button = document.getElementById('SubmitButton');
+
+    // if (document.addEventListener) {
+    //   button.addEventListener('click', function() { alert('Clicked Button'); }, false);
+    // } else {
+    //   button.attachEvent('onclick', function() { alert('Clicked ID Button'); });
+    // }
+  </script>
+
+</body>
+
+</html>

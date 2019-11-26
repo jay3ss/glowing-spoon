@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Fundamentals - Selectors by Tag Name</title>
+  <style type="text/css">
+    td {text-align: left; vertical-align: top;}
+    input[type=text] {background-color: #efefef;}
+    .BlueDiv {background-color: navy; color: white; width: 200px; }
+    .RedDiv {background-color: red; color: white; width: 200px; }
+    .Highlight { background-color: yellow; }
+    .LightHighlight { background-color: #ccc; }
+    .PhoneHighlight { background-color: #ccc; }
+    .PhoneNumber { margin-top: 5px; width: 80px; }
+    .PhoneType { margin-top: 5px; }
+    .PhoneNumberDiv {text-align: left; vertical-align: middle; width: 200px; float:  left;}
+    .PhoneTypeDiv {text-align: left; vertical-align: middle; width: 100px; float:  left;}
+  </style>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript">
+    window.jQuery || document.write('<script src="../js/jquery.js"><\/script>');
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // bind() and on()
+      // $('#MyDiv').bind('mouseenter mouseleave mouseup')
+      $('#MyDiv').on('mouseenter mouseleave mouseup', function (e) {
+        $(this).toggleClass('Highlight');
+        $(this).css('cursor', 'pointer');
+
+        if (e.type == 'mouseup') {
+          $(this).text('X: ' + e.pageX + 'Y: ' + e.pageY);
+        }
+      });
+
+      /*
+      <input type="button" id="AddPhone" value="Add Phone">
+      <div id="PhonesDiv" style="margin-top:10px;">
+        <div class="PhoneTypeDiv">
+          <select class="PhoneType">
+            <option value="">Select One:</option>
+            <option value="Mobile">Mobile</option>
+            <option value="Office">Office</option>
+          </select>
+        </div>
+        <div class="PhoneNumberDiv">
+          <input type="text" class="PhoneNumber" maxlength="12">
+        </div>
+      </div>
+    */
+
+      // Using hover()
+      // $('#MyTable tr').hover(
+      //   function () {
+      //     // mouseenter
+      //     $(this).css('background-color', '#efefef');
+      //   },
+
+      //   function () {
+      //     // mouseleave
+      //     $(this).css('background-color', '#fff');
+      // });
+
+      $('#MyTable tr').hover(
+        function () {
+          // mouseenter
+          $(this).toggleClass('LightHighlight');
+        });
+
+      // $('#MyTable tr').toggle(
+      //   function () {
+      //     // mouseenter
+      //     $(this).css('background-color', '#efefef');
+      //   },
+
+      //   function () {
+      //     // mouseleave
+      //     $(this).css('background-color', '#fff');
+      // });
+    });
+
+  </script>
+</head>
+
+<body>
+  <div id="MyDiv">This is some text</div>
+  <form action="" id="form1" runat="server">
+    <table id="MyTable" cellpadding="5" style="width:300px;">
+      <tr>
+        <td style="width:30%;">First Name</td>
+        <td style="width:70%;"><input type="text" id="FirstNameTextBox" value="John"></td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td><input type="text" id="LastNameTextBox"></td>
+      </tr>
+      <tr>
+        <td>Comments</td>
+        <td><textarea id="CommentsTextArea" cols="60" rows="5">TextArea</textarea></td>
+      </tr>
+      <tr>
+        <td>Phone</td>
+        <td>
+          <table>
+            <tr>
+              <td><input type="button" id="AddPhone" value="Add Phone"></td>
+            </tr>
+            <tr>
+              <div id="PhonesDiv" style="margin-top:10px;">
+                <div class="PhoneTypeDiv">
+                  <td>
+                    <select class="PhoneType">
+                      <option value="">Select One:</option>
+                      <option value="Mobile">Mobile</option>
+                      <option value="Office">Office</option>
+                    </select>
+                  </td>
+                </div>
+                <td>
+                  <div class="PhoneNumberDiv">
+                    <input type="text" class="PhoneNumber" maxlength="12">
+                  </div>
+                </td>
+              </div>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>State</td>
+        <td>
+          <select id="sel">
+            <option value="AZ">AZ</option>
+            <option value="CA" selected="true">CA</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="button" id="SubmitButton" value="Submit"></td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </form>
+
+</body>
+
+</html>
