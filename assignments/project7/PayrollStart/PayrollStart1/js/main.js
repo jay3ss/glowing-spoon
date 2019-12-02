@@ -76,7 +76,7 @@ function netPay(empGrossPay, empTaxes) {
 // the div element with the id of feedback
 function displayResults(empInfo) {
     var feedback = createDataTable(empInfo);
-    addHtml('feedback', feedback);
+    addHtml(feedback);
 }
 
 function createDataTable(empInfo) {
@@ -97,9 +97,10 @@ function createDataTable(empInfo) {
 }
 
 // Adds HTML to the given element ID
-function addHtml(elemId, html) {
-    var elem = document.getElementById(elemId);
-    elem.innerHTML = html;
+function addHtml(html) {
+    // var elem = document.getElementById(elemId);
+    // elem.innerHTML = html;
+    $('#feedback').html(html);
 }
 
 // Converts and returns a number to a currency string. E.g.,
