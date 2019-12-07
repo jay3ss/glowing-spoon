@@ -18,21 +18,28 @@
         <div id="errors"></div>
         <div>$<span id="balance">0.00</span></div>
 
-        <form name="atmForm">
-            <!-- Hours worked -->
+        <form name="deposit">
             <fieldset id="deposit">
                 <legend>Make a Deposit</legend>
-                <label><span>Amount</span>$<input name="despositAmount" type="number" min="0" step="0.01"></label>
-            </fieldset>
-
-            <!-- Pay rate -->
-            <fieldset id="withdrawal">
-                <legend>Make a Withdrawal</legend>
-                <label><span>Amount</span>$<input name="despositAmount" type="number" min="0" step="0.01"></label>
+                <label>
+                    <span>Amount</span>
+                    $<input name="depositAmount" type="number" min="0" step="0.01" value="0.00">
+                </label>
+                <button id="btnDeposit">Deposit</button>
             </fieldset>
         </form>
 
-        <button id="calculatePaycheck">Complete Transaction</button>
+        <form name="withdrawal">
+            <fieldset id="withdrawal">
+                <legend>Make a Withdrawal</legend>
+                <label>
+                    <span>Amount</span>
+                    $<input name="withdrawalAmount" type="number" min="0" step="0.01" value="0.00">
+                </label>
+                <button id="btnWithdraw">Withdraw</button>
+            </fieldset>
+        </form>
+
     </main>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
