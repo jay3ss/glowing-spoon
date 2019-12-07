@@ -159,3 +159,15 @@ main figure img {width: 100%;}
 	text-align: left;
 	width: 8rem;
 }
+
+main form label {
+	display: inline-block;
+	margin-right: 35px;
+}
+
+#errors {
+	color: red;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 5px 0 5px 0;
+}
