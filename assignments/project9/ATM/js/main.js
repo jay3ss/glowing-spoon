@@ -1,110 +1,86 @@
 /*jslint browser:true */
 "use strict";
 
-// main function
+//Initialize callback functions
 $(document).ready(function () {
-    $('#calculatePaycheck').on('click', function () {
-        calculatePaycheck();
+    $('#btnDeposit').on('click', function () {
+        clearErrors();
+        depositMoney();
+    });
+
+    $('#btnWithdraw').on('click', function () {
+        clearErrors();
+        withdrawMoney();
     });
 });
 
-function calculatePaycheck() {
-    // Get the data entered into the Weekly Time Sheet
-    var empName = name();
-    var hoursWorked = hours();
-    var empPayRate = payRate();
-    var empTaxRate = taxRate();
-
-    // Calculate payroll information
-    var empGrossPay = grossPay(hoursWorked, empPayRate);
-    var empTaxes = taxes(empGrossPay, empTaxRate);
-    var empNetPay = netPay(empGrossPay, empTaxes);
-
-    var empInfo = [
-        empName, hoursWorked, empTaxes, empNetPay
-    ];
-
-    // Display the results as HTML
-    displayResults(empInfo);
+// Callback function to handle the "Deposit" button
+function depositMoney() {
+    var amount = parseFloat($('#deposit input').val(), 10);
+    deposit(amount)
 }
 
-// Returns the name of the employee entered into the Weekly Time Sheet
-function name() {
-    return $('#empName input').val();
+// Callback function to handle the "Withdraw" button
+function withdrawMoney() {
+    var amount = parseFloat($('#withdrawal input').val(), 10);
+    withdraw(amount);
 }
 
-// Returns the number of hours worked entered into the Weekly Time Sheet
-function hours() {
-    var days = $('#wts input')
-    var hours = 0;
-    days.each(function () {
-        hours += Number($(this).val());
-    });
-
-    return hours;
+// Adds text to the given element
+function addText(elem, html) {
+    $(elem).text(html);
 }
 
-// Returns the employee's pay rate entered into the Weekly Time Sheet
-function payRate() {
-    return Number($('#payRate input').val());
+// Checks if a withdrawal can take place by subtracting the amount from
+// the balance and seeing if it results in a negative balance
+function canWithdraw(amount) {
+    return balance() - amount >= 0;
 }
 
-// Returns the tax rate (as a percentage) selected in the Weekly Time Sheet
-function taxRate() {
-    return Number($('option:selected').val()) / 100; // convert to a decimal
+// Returns the balance
+function balance() {
+    return parseFloat($('#balance').text(), 10);
 }
 
-// Calculates and returns the employee's gross pay
-// taxes = hours * pay rate
-function grossPay(hours, empPayRate) {
-    return hours * empPayRate;
+// Withdraws the amount given by the user. If the amount will
+// result in an overdraft then an error is displayed and the
+// withdrawal is not carried out
+function withdraw(amount) {
+    if (canWithdraw(amount)) {
+        updateBalance(balance() - amount);
+    } else {
+        overdraftError();
+    }
 }
 
-// Calculates and returns the taxes
-// taxes = gross pay * tax rate
-function taxes(grossPay, empTaxRate) {
-    return grossPay * empTaxRate;
+// Sets an error message stating that the user is attempting to overdraft
+function overdraftError() {
+    setErrorMsg('ERROR: You are trying to withdraw more than your balance');
 }
 
-// Calculates and returns the employee's net pay
-// net pay = gross pay - taxes
-function netPay(empGrossPay, empTaxes) {
-    return empGrossPay - empTaxes;
+// Clears any errors
+function clearErrors() {
+    setErrorMsg('');
 }
 
-// Displays the results of the calculations by appending HTML to
-// the div element with the id of feedback
-function displayResults(empInfo) {
-    var feedback = createDataTable(empInfo);
-    addHtml(feedback);
+// Sets an error message to the div with the id of errors
+function setErrorMsg(msg) {
+    addText('#errors', msg);
 }
 
-function createDataTable(empInfo) {
-    var empName = empInfo[0];
-    var hoursWorked = empInfo[1];
-    var empTaxes = empInfo[2];
-    var empNetPay = empInfo[3];
-
-    var dataTable = "";
-    dataTable += "<table id=\"feedbackTable\"><tbody>";
-    dataTable += "<tr><th>Name</th><td>" + empName + "</td></tr>";
-    dataTable += "<tr><th>Total Hours</th><td>" + hoursWorked + "</td></tr>";
-    dataTable += "<tr><th>Total Taxes</th><td>" + numAsCurrency(empTaxes) + "</td></tr>";
-    dataTable += "<tr><th>Net Pay</th><td>" + numAsCurrency(empNetPay) + "</td></tr>";
-    dataTable += "</tbody></table>";
-
-    return dataTable;
+// Deposits the amount given by the user
+function deposit(amount) {
+    var newBalance = numAsCurrency(balance() + amount);
+    updateBalance(newBalance);
 }
 
-// Adds HTML to the given element ID
-function addHtml(html) {
-    // var elem = document.getElementById(elemId);
-    // elem.innerHTML = html;
-    $('#feedback').html(html);
+function updateBalance(newBalance) {
+    var balAsCurrency = numAsCurrency(newBalance);
+    addText('#balance', balAsCurrency);
 }
 
 // Converts and returns a number to a currency string. E.g.,
-// 123.4567 -> $123.46
+// 123.4567 -> 123.46
 function numAsCurrency(num) {
     // Extract the dollar and cents values
     // Remove the dollar amount from the number by rounding down to the
@@ -117,8 +93,8 @@ function numAsCurrency(num) {
     // 3. Round the result to the nearest ones place
     var cents = Math.round((num - dollars) * 100);
 
-    // Create the currency string: $dollars.cents
-    var currency = "$" + dollars + ".";
+    // Create the currency string: dollars.cents
+    var currency = dollars + ".";
 
     if (cents < 10) {
         // If there are less than 10 cents, then we need to concatenate a
